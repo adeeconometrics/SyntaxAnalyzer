@@ -1,6 +1,6 @@
 #include "Token.h"
 
-Token::Token(const TokenType type, const string& lexme,
+Token::Token(const TokenType type, const string& lexeme,
             const string& literal, const int line): 
     m_type(type), 
     m_lexeme(lexeme),

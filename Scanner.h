@@ -7,7 +7,7 @@
 
 using std::unordered_map;
 using std::vector;
-using std::string;
+// using std::std::string;
 
 #include <algorithm>
 #include "ErrorHandler.h"
@@ -15,17 +15,17 @@ using std::string;
 
 class Scanner {
 private:
-  const unordered_map<string, TokenType> m_keywords; // or static const
+  static const unordered_map<std::string, TokenType> m_keywords; // or static const
   vector<Token> m_tokens;
-  string m_source;
+  std::string m_source;
   size_t m_start{}, m_current{}, m_line{};
   ErrorHandler &error_handler;
 
 public:
-  Scanner(const string &source, ErrorHandler &error);
+  Scanner(const std::string &source, ErrorHandler &error);
 
   auto scan_and_get_tokens() -> vector<Token>;
-  auto is_keyword() const -> bool;
+  auto is_keyword(const std::string& token) const -> bool;
 
 private:
 
@@ -36,7 +36,7 @@ private:
   auto identifier() -> void;
 
   auto match_and_advance(const char c) -> bool;
-  auto add_token(TokenType type, const char* token) -> void;
+  auto add_token(const TokenType type, const std::string& token) -> void;
   auto add_token(TokenType) -> void;
 
   auto advance() -> char;
@@ -48,5 +48,6 @@ private:
   auto is_alpha(const char c) const -> bool;
   auto is_alphanum(const char c) const -> bool;
 };
+
 
 #endif // SCANNER_H

@@ -11,10 +11,10 @@ auto ErrorHandler::report() const -> void {
 }
 
 auto ErrorHandler::add(int line, const string& where, const string& msg) -> void { 
-    error_list.push_back(line,where,message);
+    error_list.push_back({line,where,msg});
     has_found_error = true;
 }
 
-auto ErrorHandler::clear(){
+auto ErrorHandler::clear() -> void{
     error_list.clear();
 }
