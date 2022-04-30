@@ -101,18 +101,15 @@ enum struct TokenType : short int {
 };
 
 class Token {
-  string m_lexeme;
-  string m_literal;
-  TokenType m_type;
+  string m_lexeme{};
+  string m_literal{};
+  TokenType m_type{};
   int m_line;
 
 public:
   Token(TokenType type, const string &lexeme, const string &literal, int line);
 
   auto to_string() const -> string;
-
-//   friend auto operator<<(std::operator& ss, const Token &token)
-//       -> std::ostream &;
 };
 
 #endif // TOKEN_H
