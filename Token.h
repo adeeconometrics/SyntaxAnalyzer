@@ -101,15 +101,17 @@ enum struct TokenType : short int {
 };
 
 class Token {
-  string m_lexeme{};
-  string m_literal{};
-  TokenType m_type{};
-  int m_line;
-
 public:
+  Token() = default;
   Token(TokenType type, const string &lexeme, const string &literal, int line);
 
   auto to_string() const -> string;
+
+private:
+  TokenType m_type{};
+  string m_lexeme{};
+  string m_literal{};
+  int m_line{};
 };
 
 #endif // TOKEN_H
