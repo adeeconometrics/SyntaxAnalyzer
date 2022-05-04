@@ -11,7 +11,7 @@ using std::vector;
 #include "ErrorHandler.h"
 #include "FileReader.h"
 
-auto run(const string& source) {
+auto run(std::string_view source) {
   ErrorHandler error_handler{};
   Scanner scanner{source, error_handler};
   vector<Token> tokens = scanner.scan_and_get_tokens();
@@ -21,7 +21,7 @@ auto run(const string& source) {
     }
 }
 
-auto run_file(const char* c_str) -> void {
+auto run_file(std::string_view c_str) -> void {
     FileReader fr{c_str};
     run(fr.content());
 }

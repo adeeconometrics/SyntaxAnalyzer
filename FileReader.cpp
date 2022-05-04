@@ -1,7 +1,7 @@
 #include "FileReader.h"
 
-FileReader::FileReader(const std::string& fname) {
-    m_handler.open(fname, std::fstream::in);
+FileReader::FileReader(std::string_view fname) {
+    m_handler.open(static_cast<std::string>(fname), std::fstream::in);
 }
 
 FileReader::~FileReader(void) {

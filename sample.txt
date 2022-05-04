@@ -1,3 +1,4 @@
 int main(){
     string str = "hello world";
+    constexpr auto str_cpy{str};
 }

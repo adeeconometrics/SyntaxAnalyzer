@@ -1,6 +1,6 @@
 #include "Scanner.h"
 
-const unordered_map<std::string, TokenType> Scanner::m_keywords{
+const unordered_map<std::string_view, TokenType> Scanner::m_keywords{
     {"and", TokenType::AND},
     {"auto", TokenType::AUTO},
     {"bool", TokenType::BOOL},
@@ -65,7 +65,7 @@ const unordered_map<std::string, TokenType> Scanner::m_keywords{
     {"volatile", TokenType::VOLATILE},
     {"while", TokenType::WHILE}};
 
-Scanner::Scanner(const std::string &source, ErrorHandler &error)
+Scanner::Scanner(std::string_view source, ErrorHandler &error)
     : m_source(source), error_handler(error) {}
 
 auto Scanner::scan_and_get_tokens() -> vector<Token> {
@@ -79,7 +79,7 @@ auto Scanner::scan_and_get_tokens() -> vector<Token> {
   return m_tokens;
 }
 
-auto Scanner::is_keyword(const std::string &token) const -> bool {
+auto Scanner::is_keyword(std::string_view token) const -> bool {
   return std::any_of(
       m_keywords.cbegin(), m_keywords.cend(),
       [&token](const auto &i) -> bool { return token == i.first; });

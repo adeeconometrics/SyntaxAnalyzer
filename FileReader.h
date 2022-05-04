@@ -13,7 +13,7 @@ private:
     FileReader(FileReader&&) = delete;
 
 public : 
-    FileReader(const std::string &fname);
+    FileReader(std::string_view fname);
     ~FileReader();
 
     auto content() -> std::string;

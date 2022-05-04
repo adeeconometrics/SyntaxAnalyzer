@@ -15,17 +15,17 @@ using std::vector;
 
 class Scanner {
 private:
-  static const unordered_map<std::string, TokenType> m_keywords; // or static const
+  static const unordered_map<std::string_view, TokenType> m_keywords; // or static const
   vector<Token> m_tokens;
   std::string m_source;
   size_t m_start{}, m_current{}, m_line{};
   ErrorHandler &error_handler;
 
 public:
-  Scanner(const std::string &source, ErrorHandler &error);
+  Scanner(std::string_view source, ErrorHandler &error);
 
   auto scan_and_get_tokens() -> vector<Token>;
-  auto is_keyword(const std::string& token) const -> bool;
+  auto is_keyword(std::string_view token) const -> bool;
 
 private:
 
