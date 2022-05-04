@@ -12,6 +12,7 @@ auto Token::to_string() const -> std::string {
         case TokenType::LEFT_PAREN:
         case TokenType::RIGHT_PAREN:
         case TokenType::RIGHT_BRACE:
+        case TokenType::LEFT_BRACE:
         case TokenType::COMMA:
         case TokenType::DOT:
         case TokenType::MINUS:
@@ -19,7 +20,7 @@ auto Token::to_string() const -> std::string {
         case TokenType::SEMI_COLON:
         case TokenType::SLASH:
         case TokenType::STAR:
-            return m_lexeme + " is punctuator. ";
+            return m_lexeme + "\t\t is punctuator. ";
         
         case TokenType::BANG:
         case TokenType::BANG_EQUAL:
@@ -29,26 +30,19 @@ auto Token::to_string() const -> std::string {
         case TokenType::GREATER_EQUAL:
         case TokenType::LESS:
         case TokenType::LESS_EQUAL:
-            return m_lexeme + " is a relational operator.";
-
+            return m_lexeme + "\t\t is a relational operator.";
 
         case TokenType::STRING:
-            return m_literal + " is string literal. ";
+            return m_literal + "\t\t is string literal. ";
         case TokenType::NUMBER:
-            return m_literal + " is a number. ";
+            return m_literal + "\t\t is a number. ";
         case TokenType::IDENTIFIER:
-            return m_lexeme + " is an identifier. ";
+            return m_lexeme + "\t\t is an identifier. ";
 
         case TokenType::END_OF_FILE:
-            return m_lexeme + " is end of file. "; 
+            return m_lexeme + "\t\t is end of file. "; 
         
         default:
-            return m_lexeme + " is keyword. ";
+            return m_lexeme + "\t\t is keyword. ";
     }
-
-    // if(m_type == TokenType::STRING || 
-    //     m_type == TokenType::NUMBER)
-    //         return m_literal + " is literal";
-    
-    // return m_lexeme + " is identifier";
 }

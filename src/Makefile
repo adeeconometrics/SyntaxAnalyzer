@@ -18,3 +18,4 @@ FileReader.o: FileReader.cpp
 
 clean:
 	rm *.o Lexer
+

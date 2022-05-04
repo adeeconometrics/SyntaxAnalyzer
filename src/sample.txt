@@ -1,0 +1,14 @@
+void function(int x);
+void function(int x, double x);
+
+int main(){
+    string     str = 
+    "hello world";
+    // comment
+    int i += 
+    314;
+
+    float f = 3.25; // comememeo'in'goipnbh
+
+    constexpr auto str_cpy{str};
+}
