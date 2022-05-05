@@ -35,7 +35,7 @@ int main(int argc, char** argv){
     // if(argc > 1)
     //     exit(1);
     // else if (argc == 1) {
-    //     run_file(argv[0]);
+    //     run_file(argv[1]);
     // } else {
     //     run_prompt();
     // }
