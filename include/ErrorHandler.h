@@ -18,10 +18,31 @@ public:
 
   ErrorHandler() = default;
 
+  /**
+   * @brief reports the error encountered.
+   * 
+   */
   auto report() const -> void;
+
+  /**
+   * @brief add information about an error encountered which will be included in the `error_list` 
+   * 
+   * @param line 
+   * @param where 
+   * @param msg 
+   */
   auto add(int line, const string &where, const string &msg) -> void;
+
+  /**
+   * @brief clears the data of `error_list`
+   * 
+   */
   auto clear() -> void;
 
+  /**
+   * @brief helper function that tells whether an error has occurred 
+   * 
+   */
   bool has_found_error{};
 
 private:

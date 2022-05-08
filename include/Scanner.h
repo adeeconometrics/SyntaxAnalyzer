@@ -24,11 +24,23 @@ private:
 public:
   Scanner(std::string_view source, ErrorHandler &error);
 
+  /**
+   * @brief scan and adds each lexeme encountered in a vector of tokens
+   * 
+   * @return vector<Token> 
+   */
   auto scan_and_get_tokens() -> vector<Token>;
+
+  /**
+   * @brief returns if the passed argument is a keyword
+   * 
+   * @param token 
+   * @return true 
+   * @return false 
+   */
   auto is_keyword(std::string_view token) const -> bool;
 
 private:
-
   auto scan_and_add_token() -> void;
   
   auto string() -> void;

@@ -16,6 +16,11 @@ public :
     FileReader(std::string_view fname);
     ~FileReader();
 
+    /**
+     * @brief returns the content of `fname`
+     * 
+     * @return std::string 
+     */
     auto content() -> std::string;
 };
 

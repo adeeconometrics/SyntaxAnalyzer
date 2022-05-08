@@ -1,0 +1,57 @@
+\begin{theindex}
+
+  \item {add}
+    \subitem {ErrorHandler}, \hyperpage{3}
+
+  \indexspace
+
+  \item {clear}
+    \subitem {ErrorHandler}, \hyperpage{4}
+  \item {content}
+    \subitem {FileReader}, \hyperpage{6}
+
+  \indexspace
+
+  \item {ErrorHandler}, \hyperpage{3}
+    \subitem {add}, \hyperpage{3}
+    \subitem {clear}, \hyperpage{4}
+    \subitem {has\_found\_error}, \hyperpage{4}
+    \subitem {report}, \hyperpage{4}
+  \item {ErrorHandler::ErrorInfo}, \hyperpage{5}
+
+  \indexspace
+
+  \item {FileReader}, \hyperpage{5}
+    \subitem {content}, \hyperpage{6}
+
+  \indexspace
+
+  \item {has\_found\_error}
+    \subitem {ErrorHandler}, \hyperpage{4}
+
+  \indexspace
+
+  \item {is\_keyword}
+    \subitem {Scanner}, \hyperpage{6}
+
+  \indexspace
+
+  \item {report}
+    \subitem {ErrorHandler}, \hyperpage{4}
+
+  \indexspace
+
+  \item {scan\_and\_get\_tokens}
+    \subitem {Scanner}, \hyperpage{7}
+  \item {Scanner}, \hyperpage{6}
+    \subitem {is\_keyword}, \hyperpage{6}
+    \subitem {scan\_and\_get\_tokens}, \hyperpage{7}
+
+  \indexspace
+
+  \item {to\_string}
+    \subitem {Token}, \hyperpage{7}
+  \item {Token}, \hyperpage{7}
+    \subitem {to\_string}, \hyperpage{7}
+
+\end{theindex}

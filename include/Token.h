@@ -106,6 +106,11 @@ public:
   Token() = default;
   Token(TokenType type, const string &lexeme, const string &literal, int line);
 
+  /**
+   * @brief converts token type into a printable format
+   * 
+   * @return string 
+   */
   auto to_string() const -> string;
 
 private:

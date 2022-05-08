@@ -1,0 +1,60 @@
+\hypertarget{classScanner}{}\doxysection{Scanner Class Reference}
+\label{classScanner}\index{Scanner@{Scanner}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classScanner_a8f84c08a0516c88f3c723340d9c1274e}\label{classScanner_a8f84c08a0516c88f3c723340d9c1274e}} 
+{\bfseries Scanner} (std\+::string\+\_\+view source, \mbox{\hyperlink{classErrorHandler}{Error\+Handler}} \&error)
+\item 
+auto \mbox{\hyperlink{classScanner_a0ccee999012991d3892f7ce7593153d5}{scan\+\_\+and\+\_\+get\+\_\+tokens}} () -\/$>$ vector$<$ \mbox{\hyperlink{classToken}{Token}} $>$
+\begin{DoxyCompactList}\small\item\em scan and adds each lexeme encountered in a vector of tokens \end{DoxyCompactList}\item 
+auto \mbox{\hyperlink{classScanner_ab744b3cc255fb3a7a050ebc2c45dbcd3}{is\+\_\+keyword}} (std\+::string\+\_\+view token) const -\/$>$ bool
+\begin{DoxyCompactList}\small\item\em returns if the passed argument is a keyword \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 16 of file Scanner.\+h.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classScanner_ab744b3cc255fb3a7a050ebc2c45dbcd3}\label{classScanner_ab744b3cc255fb3a7a050ebc2c45dbcd3}} 
+\index{Scanner@{Scanner}!is\_keyword@{is\_keyword}}
+\index{is\_keyword@{is\_keyword}!Scanner@{Scanner}}
+\doxysubsubsection{\texorpdfstring{is\_keyword()}{is\_keyword()}}
+{\footnotesize\ttfamily auto Scanner\+::is\+\_\+keyword (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{token }\end{DoxyParamCaption}) const -\/$>$  bool}
+
+
+
+returns if the passed argument is a keyword 
+
+
+\begin{DoxyParams}{Parameters}
+{\em token} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classScanner_a0ccee999012991d3892f7ce7593153d5}\label{classScanner_a0ccee999012991d3892f7ce7593153d5}} 
+\index{Scanner@{Scanner}!scan\_and\_get\_tokens@{scan\_and\_get\_tokens}}
+\index{scan\_and\_get\_tokens@{scan\_and\_get\_tokens}!Scanner@{Scanner}}
+\doxysubsubsection{\texorpdfstring{scan\_and\_get\_tokens()}{scan\_and\_get\_tokens()}}
+{\footnotesize\ttfamily auto Scanner\+::scan\+\_\+and\+\_\+get\+\_\+tokens (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) -\/$>$  vector$<$ \mbox{\hyperlink{classToken}{Token}} $>$}
+
+
+
+scan and adds each lexeme encountered in a vector of tokens 
+
+\begin{DoxyReturn}{Returns}
+vector$<$\+Token$>$ 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/c/\+Users/amianadave/\+Documents/cpp/\+Lexer/include/Scanner.\+h\end{DoxyCompactItemize}
