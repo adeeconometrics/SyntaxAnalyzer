@@ -1,0 +1,3 @@
+/mnt/c/Users/amianadave/Documents/cpp/Lexer/build/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/amianadave/Documents/cpp/Lexer/build/CMakeFiles/edit_cache.dir
+/mnt/c/Users/amianadave/Documents/cpp/Lexer/build/CMakeFiles/cpplox.dir

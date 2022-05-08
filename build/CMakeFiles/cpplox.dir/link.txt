@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/cpplox.dir/src/ErrorHandler.cpp.o CMakeFiles/cpplox.dir/src/FileReader.cpp.o CMakeFiles/cpplox.dir/src/Main.cpp.o CMakeFiles/cpplox.dir/src/Scanner.cpp.o CMakeFiles/cpplox.dir/src/Token.cpp.o  -o cpplox 
