@@ -1,5 +1,5 @@
-#ifndef ERRORHANDLER_H
-#define ERRORHANDLER_H
+#ifndef __ERRORHANDLER_H__
+#define __ERRORHANDLER_H__
 
 #include <vector>
 #include <string>
@@ -9,7 +9,7 @@ using std::vector;
 
 class ErrorHandler {
 
-public:
+public: 
   struct ErrorInfo {
     int line{};
     string where;
@@ -49,4 +49,4 @@ private:
   vector<ErrorInfo> error_list;
 };
 
-#endif // ERRORHANDLER_H
+#endif // __ERRORHANDLER_H__

@@ -1,0 +1,3 @@
+- [ ] reconfigure tokenizer for Cpplox grammar
+- [ ] modify grammar 
+- [ ] implement parser 
