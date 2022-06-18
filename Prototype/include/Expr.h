@@ -6,7 +6,6 @@
 #include <any>
 #include <vector>
 
-
 namespace lox {
 
 class Expr {
@@ -111,8 +110,8 @@ class Expr {
   };
 
   struct Set : public Expr {
-    Set(const Expr& _obj, const Token& _name, const Expr& _value)
-        :m_obj(_obj), m_name(_name), m_value(_value) {}
+    Set(const Expr &_obj, const Token &_name, const Expr &_value)
+        : m_obj(_obj), m_name(_name), m_value(_value) {}
 
     template <typename T> auto accept(const Visitor<T> &visitor) -> T override {
       return visitor.visit_set_expr(*this);
@@ -124,8 +123,8 @@ class Expr {
   };
 
   struct Super : public Expr {
-    Super(const Token& _keyword, const Token& _method)
-        : m_keyword(_keyword), m_method(_method){}
+    Super(const Token &_keyword, const Token &_method)
+        : m_keyword(_keyword), m_method(_method) {}
 
     template <typename T> auto accept(const Visitor<T> &visitor) -> T override {
       return visitor.visit_super_expr(*this);
@@ -136,8 +135,7 @@ class Expr {
   };
 
   struct This : public Expr {
-    This(const Token& _keyword)
-        : m_keyword(_keyword){}
+    This(const Token &_keyword) : m_keyword(_keyword) {}
 
     template <typename T> auto accept(const Visitor<T> &visitor) -> T override {
       return visitor.visit_this_expr(*this);
@@ -146,9 +144,8 @@ class Expr {
     const Token m_keyword;
   };
 
-  struct Unary : public Expr{
-    Unary(const Token& _op, const Expr & _right)
-        : m_op(_op), m_right(_right) {}
+  struct Unary : public Expr {
+    Unary(const Token &_op, const Expr &_right) : m_op(_op), m_right(_right) {}
 
     template <typename T> auto accept(const Visitor<T> &visitor) -> T override {
       return visitor.visit_unary_expr(*this);
@@ -159,8 +156,7 @@ class Expr {
   };
 
   struct Variable : public Expr {
-    Variable(const Token& _name)
-        : m_name(_name){}
+    Variable(const Token &_name) : m_name(_name) {}
 
     template <typename T> auto accept(const Visitor<T> &visitor) -> T override {
       return visitor.visit_variable_expr(*this);
