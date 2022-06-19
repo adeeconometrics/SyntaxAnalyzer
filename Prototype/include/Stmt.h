@@ -24,7 +24,7 @@ class Stmt {
     template <typename T>
     virtual auto accept(const Visitor<T> &visitor) -> T = 0;
 
-    struct Block : public Stmt{
+    struct Block final: public Stmt{
         Block(const std::vector<Stmt>& _stmt)
             : m_stmt(_stmt){}
 
@@ -36,7 +36,7 @@ class Stmt {
         const std::vector<Stmt> m_stmt;
     };
 
-    struct Class : public Stmt {
+    struct Class final: public Stmt {
         Class(const Token& _name,
             const Expr.Variable& _superclass,
             const std::vector<Stmt.Function>& _methods)
@@ -52,7 +52,7 @@ class Stmt {
         const std::vector<Stmt.Function> m_methods;
     };
 
-    struct Expression : public Stmt {
+    struct Expression final: public Stmt {
         Expression(const Expr& _expr)
             : m_expr(_expr){}
 
@@ -64,7 +64,7 @@ class Stmt {
         const Expr m_expr;
     };
 
-    struct Function : public Stmt{
+    struct Function final: public Stmt{
         Function(const Token& _name,
                 const std::vector<Token>& _params,
                 const std::vector<Stmt>& _body)
@@ -80,7 +80,7 @@ class Stmt {
         const std::vector<Stmt> m_body;
     };
 
-    struct If : public Stmt{
+    struct If final: public Stmt{
         If(const Expr& _condition,
             const _then,
             const _else)
@@ -96,7 +96,7 @@ class Stmt {
         const Stmt m_else;
     };
 
-    struct Print : public Stmt {
+    struct Print final: public Stmt {
         Print(const Expr& _expr)
             : m_expr(_expr) {}
 
@@ -108,7 +108,7 @@ class Stmt {
         const Expr m_expr;
     };
 
-    struct Return : public Stmt {
+    struct Return final: public Stmt {
         Return (const Token& _keyword, const Expr& _value)
             : m_keyword(_keyword), m_value(_value) {}
 
@@ -121,7 +121,7 @@ class Stmt {
         const Expr value;
     };
 
-    struct Var : public Stmt {
+    struct Var final: public Stmt {
         Var(const Token& _name, const Expr& _initializer)
             : m_name(_name), m_initializer(_initializer) {}
 
@@ -134,7 +134,7 @@ class Stmt {
         const Expr m_initializer;
     };
 
-    struct While : public Stmt {
+    struct While final: public Stmt {
         While(const Expr& _condition, const Stmt& _body)
             : m_condition(_condition), m_body(_body) {}
 

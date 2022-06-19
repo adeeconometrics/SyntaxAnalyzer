@@ -18,6 +18,7 @@ public:
         const std::any& _literal, int _line );
     
     auto to_string(void) const noexcept -> std::string;
+    auto get_lexeme(void) const noexcept -> std::string; // not final
 };
 
 };

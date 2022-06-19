@@ -27,9 +27,16 @@ class LoxFunction : public LoxCallable {
     }
 
     auto to_string(void) const noexcept -> std::string {
-        return "<fn" + m_declaration.name.lexeme + ">";
+        return "<fn" + m_declaration.m_name.get_lexeme() + ">";
     }
 
+    auto arity() const noexcept -> int override {
+      return m_declaration.m_params.size();
+    };
+
+    auto call(const Interpreter& interpreter, 
+              const std::vector<std::any>& args) -> std::any override; 
+              
 private:
   const Stmt.Function m_declaration;
   const Environment m_closure;

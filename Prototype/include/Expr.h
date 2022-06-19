@@ -26,7 +26,7 @@ class Expr {
 
   template <typename T> virtual auto accept(const Visitor<T> &visitor) -> T = 0;
   // should be static
-  struct Assign : public Expr {
+  struct Assign final: public Expr {
     Assign(const Token &_name, const Expr &_value)
         : m_name(_name), m_value(_value) {}
 
@@ -38,7 +38,7 @@ class Expr {
     const Expr m_value;
   };
 
-  struct Binary : public Expr {
+  struct Binary final: public Expr {
     Binary(const Expr &_left, const Token &_op, const Expr &_right)
         : m_left(_left), m_op(_op), m_right(_right) {}
 
@@ -51,7 +51,7 @@ class Expr {
     const Expr m_right;
   };
 
-  struct Call : public Expr {
+  struct Call final: public Expr {
     Call(const Expr &_callee, const Token &_paren,
          const std::vector<Expr> &_args)
         : m_callee(_callee), m_paren(_paren), m_args(_args) {}
@@ -65,7 +65,7 @@ class Expr {
     const std::vector<Expr> m_args;
   };
 
-  struct Get : public Expr {
+  struct Get final: public Expr {
     Get(const Expr &_obj, const Token &_name) : m_obj(_obj), m_name(_name) {}
 
     template <typename T> auto accept(const Visitor<T> &visitor) -> T override {
@@ -76,7 +76,7 @@ class Expr {
     const Token m_name;
   };
 
-  struct Grouping : public Expr {
+  struct Grouping final: public Expr {
     Grouping(const Expr &_expr) : m_expr(_expr) {}
 
     template <typename T> auto accept(const Visitor<T> &visitor) -> T override {
@@ -86,7 +86,7 @@ class Expr {
     const Expr m_expr;
   };
 
-  struct Literal : public Expr {
+  struct Literal final: public Expr {
     Literal(const std::any &_value) : m_value(_value) {}
 
     template <typename T> auto accept(const Visitor<T> &visitor) -> T override {
@@ -96,7 +96,7 @@ class Expr {
     const std::any m_value;
   };
 
-  struct Logical : public Expr {
+  struct Logical final: public Expr {
     Logical(const Expr &_left, const Token &_op, const Expr &_right)
         : m_left(_left), m_op(_op), m_right(_right) {}
 
@@ -109,7 +109,7 @@ class Expr {
     const Expr m_right;
   };
 
-  struct Set : public Expr {
+  struct Set final: public Expr {
     Set(const Expr &_obj, const Token &_name, const Expr &_value)
         : m_obj(_obj), m_name(_name), m_value(_value) {}
 
@@ -122,7 +122,7 @@ class Expr {
     const Expr m_value;
   };
 
-  struct Super : public Expr {
+  struct Super final: public Expr {
     Super(const Token &_keyword, const Token &_method)
         : m_keyword(_keyword), m_method(_method) {}
 
@@ -134,7 +134,7 @@ class Expr {
     const Token m_method;
   };
 
-  struct This : public Expr {
+  struct This final: public Expr {
     This(const Token &_keyword) : m_keyword(_keyword) {}
 
     template <typename T> auto accept(const Visitor<T> &visitor) -> T override {
@@ -144,7 +144,7 @@ class Expr {
     const Token m_keyword;
   };
 
-  struct Unary : public Expr {
+  struct Unary final: public Expr {
     Unary(const Token &_op, const Expr &_right) : m_op(_op), m_right(_right) {}
 
     template <typename T> auto accept(const Visitor<T> &visitor) -> T override {
@@ -155,7 +155,7 @@ class Expr {
     const Expr m_right;
   };
 
-  struct Variable : public Expr {
+  struct Variable final: public Expr {
     Variable(const Token &_name) : m_name(_name) {}
 
     template <typename T> auto accept(const Visitor<T> &visitor) -> T override {
