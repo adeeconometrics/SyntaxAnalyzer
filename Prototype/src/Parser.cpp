@@ -33,7 +33,7 @@ auto Parser::assignment(void) -> Expr;
 auto Parser:: or (void) -> Expr;
 auto Parser::and(void) -> Expr;
 
-auto Parser::equality(void) -> Expr {
+auto Parser::equality(void) const noexcept-> Expr {
   Expr expr{comparison()};
   while (match({TokenType::BANG_EQUAL, TokenType::EQUAL_EQUAL})) {
     Token op = previous();
@@ -43,7 +43,7 @@ auto Parser::equality(void) -> Expr {
   return expr;
 }
 
-auto Parser::comparison(void) -> Expr {
+auto Parser::comparison(void) const noexcept-> Expr {
   Expr expr{term()};
   while (match({TokenType::GREATER, TokenType::GREATER_EQUAL, TokenType::LESS,
                 TokenType::LESS_EQUAL})) {
@@ -54,7 +54,7 @@ auto Parser::comparison(void) -> Expr {
   return expr;
 }
 
-auto Parser::term(void) -> Expr {
+auto Parser::term(void) const noexcept-> Expr {
   Expr expr{factor()};
   while (match({TokenType::MINUS, TokenType::PLUS})) {
     Token op = previous();
@@ -64,7 +64,7 @@ auto Parser::term(void) -> Expr {
   return expr;
 }
 
-auto Parser::factor(void) -> Expr {
+auto Parser::factor(void) const noexcept-> Expr {
   Expr expr{unary()};
   while (match({TokenType::SLASH, TokenType::STAR})) {
     Token op = previous();
@@ -74,7 +74,7 @@ auto Parser::factor(void) -> Expr {
   return expr;
 }
 
-auto Parser::unary(void) -> Expr {
+auto Parser::unary(void) const noexcept-> Expr {
   if (match({TokenType::BANG, TokenType::MINUS})) {
     Token op = previous();
     Expr right = unary();
