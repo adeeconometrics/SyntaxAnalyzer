@@ -6,6 +6,7 @@
 #include "Stmt.h"
 #include "Expr.h"
 
+#include <initializer_list>
 #include <vector>
 #include <string> // to std::string_view?
 
@@ -43,11 +44,11 @@ private:
     auto assignment(void) -> Expr;
     auto or(void) -> Expr;
     auto and (void) -> Expr;
-    auto equality (void) -> Expr;
-    auto comparison (void) -> Expr;
-    auto term (void) -> Expr;
-    auto factor (void) -> Expr;
-    auto unary (void) -> Expr;
+    auto equality (void) const noexcept -> Expr;
+    auto comparison (void) const noexcept -> Expr;
+    auto term (void) const noexcept -> Expr;
+    auto factor (void) const noexcept -> Expr;
+    auto unary (void) const noexcept -> Expr;
     auto call (void) -> Expr;
     auto primary (void) -> Expr;
     auto finish_call (const Expr&) -> Expr;
@@ -57,7 +58,7 @@ private:
     auto advance(void) noexcept -> Token;
     auto previous(void) const noexcept -> Token;
 
-    auto match(const std::vector<TokenType>&) const noexcept -> bool;
+    auto match(const std::initializer_list<TokenType> &) const noexcept -> bool;
     auto check(const TokenType&) const noexcept -> bool;
     auto is_at_end(void) const noexcept -> bool;
     // auto error(const Token&, const std::string&) -> ParseError;
